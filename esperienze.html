@@ -19,10 +19,14 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
 
-            padding: 24px;
+            padding: 32px 20px;
 
             font-family:
                 -apple-system,
@@ -34,36 +38,43 @@
                 sans-serif;
 
             background:
-                radial-gradient(
-                    circle at top left,
-                    rgba(99, 102, 241, 0.20),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at bottom right,
-                    rgba(139, 92, 246, 0.18),
-                    transparent 35%
-                ),
                 linear-gradient(
-                    135deg,
-                    #0f172a,
-                    #1e1b4b
+                    180deg,
+                    #f3f5f7 0%,
+                    #e7ebee 100%
                 );
 
-            color: #ffffff;
+            color: #1f2933;
         }
 
         .container {
             width: 100%;
-            max-width: 760px;
+            max-width: 820px;
 
             margin: 0 auto;
         }
 
+        /* HEADER */
+
         .header {
+            position: relative;
+
             text-align: center;
 
-            padding: 20px 0 34px;
+            padding: 20px 0 38px;
+        }
+
+        .header::after {
+            content: "";
+
+            display: block;
+
+            width: 100%;
+            height: 1px;
+
+            margin-top: 30px;
+
+            background: #cfd5da;
         }
 
         .small-avatar {
@@ -76,54 +87,77 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 50%;
+            background: #29323b;
 
-            font-size: 25px;
+            color: #ffffff;
+
+            border: 1px solid #1f2933;
+
+            border-radius: 0;
+
+            font-size: 23px;
             font-weight: 700;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #6366f1,
-                    #8b5cf6
-                );
+            letter-spacing: 1px;
 
             box-shadow:
-                0 10px 30px rgba(99, 102, 241, 0.30);
+                0 8px 20px rgba(31, 41, 51, 0.15);
         }
 
         h1 {
-            font-size: 30px;
-
             margin-bottom: 8px;
+
+            color: #1f2933;
+
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
 
             letter-spacing: -0.5px;
         }
 
         .subtitle {
-            color: #cbd5e1;
+            color: #65717c;
 
-            font-size: 16px;
+            font-size: 15px;
+            line-height: 1.5;
+
+            font-weight: 500;
+
+            letter-spacing: 0.15px;
         }
 
+        /* SEZIONI */
+
         .section {
+            position: relative;
+
             margin-bottom: 18px;
 
-            padding: 24px;
+            padding: 26px;
 
-            background:
-                rgba(255, 255, 255, 0.08);
+            background: #ffffff;
 
-            border:
-                1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid #cfd5da;
 
-            border-radius: 22px;
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            border-radius: 0;
 
             box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.20);
+                0 12px 30px rgba(31, 41, 51, 0.07);
+        }
+
+        .section::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 3px;
+            height: 100%;
+
+            background: #4b5563;
         }
 
         .section-title {
@@ -133,57 +167,94 @@
 
             gap: 10px;
 
-            font-size: 20px;
+            margin-bottom: 22px;
 
-            margin-bottom: 20px;
+            color: #27313a;
+
+            font-size: 19px;
+            line-height: 1.3;
+
+            font-weight: 650;
+
+            letter-spacing: -0.2px;
         }
 
+        .section-title::after {
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #e1e5e8;
+        }
+
+        /* PROGETTI */
+
         .project {
-            padding: 18px;
+            padding: 19px 20px;
 
-            background:
-                rgba(255, 255, 255, 0.05);
+            margin-bottom: 12px;
 
-            border:
-                1px solid rgba(255, 255, 255, 0.08);
+            background: #f7f8f9;
 
-            border-radius: 16px;
+            border: 1px solid #d8dde1;
 
-            margin-bottom: 13px;
+            border-radius: 0;
+
+            transition:
+                background 0.18s ease,
+                border-color 0.18s ease,
+                transform 0.18s ease;
         }
 
         .project:last-child {
             margin-bottom: 0;
         }
 
-        .project h3 {
-            font-size: 17px;
+        .project:hover {
+            background: #f1f3f5;
 
+            border-color: #b9c1c8;
+
+            transform: translateX(2px);
+        }
+
+        .project h3 {
             margin-bottom: 7px;
+
+            color: #27313a;
+
+            font-size: 16px;
+            line-height: 1.45;
+
+            font-weight: 650;
         }
 
         .project-meta {
-            font-size: 13px;
-
-            color: #a5b4fc;
-
             margin-bottom: 10px;
+
+            color: #6b7580;
+
+            font-size: 12.5px;
+            font-weight: 500;
         }
 
         .project p {
-            color: #cbd5e1;
+            color: #5d6872;
 
             font-size: 14px;
-
-            line-height: 1.65;
+            line-height: 1.7;
         }
+
+        /* ESPERIENZE E FORMAZIONE */
 
         .experience {
             position: relative;
 
-            padding-left: 20px;
+            padding-left: 21px;
 
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
         .experience:last-child {
@@ -196,100 +267,254 @@
             position: absolute;
 
             left: 0;
-            top: 4px;
+            top: 7px;
 
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
 
-            border-radius: 50%;
+            background: #4b5563;
 
-            background: #8b5cf6;
+            border: 1px solid #374151;
 
-            box-shadow:
-                0 0 12px rgba(139, 92, 246, 0.65);
+            border-radius: 0;
         }
 
         .experience h3 {
-            font-size: 17px;
-
             margin-bottom: 5px;
+
+            color: #27313a;
+
+            font-size: 16px;
+            line-height: 1.45;
+
+            font-weight: 650;
         }
 
         .experience-meta {
-            color: #a5b4fc;
-
-            font-size: 13px;
-
             margin-bottom: 8px;
+
+            color: #6b7580;
+
+            font-size: 12.5px;
+            line-height: 1.5;
+
+            font-weight: 500;
         }
 
         .experience p {
-            color: #cbd5e1;
+            color: #5d6872;
 
             font-size: 14px;
-
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
+        /* LINK */
+
         .back {
+            position: relative;
+
             display: block;
 
             width: 100%;
 
-            margin-top: 22px;
+            margin-top: 24px;
 
-            padding: 15px;
+            padding: 15px 18px;
 
             text-align: center;
 
             text-decoration: none;
 
+            background: #29323b;
+
+            border: 1px solid #1f2933;
+
+            border-radius: 0;
+
             color: #ffffff;
 
+            font-size: 14px;
             font-weight: 600;
 
-            border-radius: 15px;
-
-            background:
-                rgba(255, 255, 255, 0.08);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.10);
+            letter-spacing: 0.15px;
 
             transition:
-                transform 0.2s ease,
-                background 0.2s ease;
+                background 0.18s ease,
+                transform 0.18s ease;
         }
 
         .back:hover {
-            transform: translateY(-2px);
+            background: #374151;
 
-            background:
-                rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
         }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
 
             padding: 25px 0 10px;
 
-            color: #94a3b8;
+            color: #8a949d;
 
-            font-size: 12px;
+            font-size: 11px;
+
+            letter-spacing: 0.4px;
         }
+
+        /* MOBILE */
 
         @media (max-width: 480px) {
 
             body {
-                padding: 15px;
+                padding: 18px 12px;
+            }
+
+            .header {
+                padding-bottom: 30px;
             }
 
             .section {
-                padding: 19px;
+                padding: 21px 18px;
             }
 
             h1 {
                 font-size: 26px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .project,
+            .experience {
+                padding-left: 17px;
+            }
+
+            .project p,
+            .experience p {
+                font-size: 13.5px;
+            }
+
+        }
+
+        /* ACCESSIBILITÀ */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .project,
+            .back {
+                transition: none;
+            }
+
+        }
+
+        /* DARK MODE */
+
+        @media (prefers-color-scheme: dark) {
+
+            body {
+                background:
+                    linear-gradient(
+                        180deg,
+                        #171b1f 0%,
+                        #22272c 100%
+                    );
+
+                color: #e5e7eb;
+            }
+
+            .header::after {
+                background: #394149;
+            }
+
+            .small-avatar {
+                background: #11161a;
+
+                border-color: #46505a;
+            }
+
+            h1 {
+                color: #f3f4f6;
+            }
+
+            .subtitle {
+                color: #b8c0c7;
+            }
+
+            .section {
+                background: #20252a;
+
+                border-color: #394149;
+
+                box-shadow:
+                    0 12px 30px rgba(0, 0, 0, 0.20);
+            }
+
+            .section::before {
+                background: #9ca3af;
+            }
+
+            .section-title {
+                color: #eef0f2;
+            }
+
+            .section-title::after {
+                background: #343c43;
+            }
+
+            .project {
+                background: #292f34;
+
+                border-color: #414a52;
+            }
+
+            .project:hover {
+                background: #32393f;
+
+                border-color: #57616a;
+            }
+
+            .project h3,
+            .experience h3 {
+                color: #edf0f2;
+            }
+
+            .project-meta,
+            .experience-meta {
+                color: #9da7af;
+            }
+
+            .project p,
+            .experience p {
+                color: #adb6be;
+            }
+
+            .experience::before {
+                background: #c4cbd1;
+
+                border-color: #9ca3af;
+            }
+
+            .back {
+                background: #e5e7eb;
+
+                border-color: #e5e7eb;
+
+                color: #1f2933;
+            }
+
+            .back:hover {
+                background: #ffffff;
+            }
+
+            footer {
+                color: #7f8992;
             }
 
         }
@@ -334,11 +559,19 @@
             <article class="project">
 
                 <h3>
-                    Corso: Industrial Technologies
+                    Industrial Technologies
                 </h3>
 
                 <p>
-                    L'obiettivo del progetto è analizzare l'attuale sistema produttivo di POLICoffee per identificarne i colli di bottiglia e fare fronte all'aumento della domanda. Il lavoro mira ad aumentare la capacità produttiva valutando sia l'integrazione di automazioni e tecnologie digitali nell'officina esistente, sia il passaggio a una linea di montaggio multi-modello, preservando l'elevata qualità del prodotto. L'analisi e la modellazione del sistema vanno sviluppate ed eseguite utilizzando Excel e MATLAB Simulink.
+                    Analisi del sistema produttivo di POLICoffee con l’obiettivo
+                    di individuare i principali colli di bottiglia e valutare
+                    soluzioni in grado di sostenere l’aumento della domanda.
+                    Il lavoro ha considerato sia l’introduzione di automazione
+                    e tecnologie digitali nell’officina esistente, sia il
+                    possibile passaggio a una linea di assemblaggio
+                    multi-modello, mantenendo gli attuali standard qualitativi.
+                    Analisi e modellazione sono state sviluppate con Excel
+                    e MATLAB Simulink.
                 </p>
 
             </article>
@@ -348,11 +581,18 @@
             <article class="project">
 
                 <h3>
-                    Corso: Laboratorio di Analisi e Modellizzazione dei Processi
+                    Laboratorio di Analisi e Modellizzazione dei Processi
                 </h3>
 
                 <p>
-                   Analisi e modellizzazione di processi aziendali attraverso la mappatura dei flussi, l’analisi delle performance e l’identificazione delle principali criticità. Utilizzo di strumenti quantitativi e qualitativi, tra cui Excel e Signavio, per analizzare dati e sviluppare modelli a supporto delle decisioni. Progettazione di alternative di riprogettazione dei processi e valutazione degli interventi sotto il profilo economico, operativo, organizzativo e di rischio. dalla diagnosi del processo alla proposta di miglioramento e alla presentazione dei risultati.
+                    Analisi di processi aziendali attraverso la mappatura dei
+                    flussi, la valutazione delle performance e l’individuazione
+                    delle principali criticità. Utilizzo di Excel e Signavio
+                    per l’analisi dei dati e la costruzione dei modelli.
+                    Sono state sviluppate diverse alternative di riprogettazione
+                    e valutate in termini economici, operativi, organizzativi
+                    e di rischio, dalla diagnosi iniziale fino alla proposta
+                    di miglioramento e alla presentazione dei risultati.
                 </p>
 
             </article>
@@ -362,25 +602,41 @@
             <article class="project">
 
                 <h3>
-                    Corso: Logistics Management
+                    Logistics Management
                 </h3>
 
                 <p>
-                    Risoluzione di tre casi di studio aziendali focalizzati sulle componenti chiave della logistica: analisi dell'impatto strategico della logistica sulle performance aziendali (Pirelli), progettazione di un magazzino di picking per l'e-grocery (Unicoop Firenze) e design qualitativo della rete distributiva con scelta della localizzazione di un magazzino (Mondadori Libri) tramite centre of gravity model.
+                    Sviluppo di tre casi aziendali incentrati su differenti
+                    aspetti della logistica. Il lavoro ha riguardato l’analisi
+                    dell’impatto della logistica sulle performance aziendali
+                    per Pirelli, la progettazione di un magazzino di picking
+                    per l’e-grocery di Unicoop Firenze e la definizione della
+                    rete distributiva di Mondadori Libri, con valutazione della
+                    localizzazione del magazzino tramite il modello del
+                    centre of gravity.
                 </p>
 
             </article>
 
 
-                        <!-- PROGETTO 4 -->
+            <!-- PROGETTO 4 -->
             <article class="project">
 
                 <h3>
-                    Corso: Accounting, Finance & Control
+                    Accounting, Finance &amp; Control
                 </h3>
 
                 <p>
-Analisi finanziaria di Pirelli attraverso l’applicazione di indicatori economico-finanziari e metodologie di financial statement analysis. Valutazione delle performance aziendali mediante analisi longitudinale e benchmarking con i principali competitor, integrando dati di bilancio e informazioni di mercato. Interpretazione critica dei risultati alla luce della strategia aziendale e del contesto competitivo e industriale. Elaborazione di un outlook qualitativo sulle prospettive future dell’azienda, supportato anche da strumenti di AI e da una valutazione critica dei relativi risultati.                </p>
+                    Analisi economico-finanziaria di Pirelli attraverso
+                    l’esame del bilancio, l’utilizzo di indicatori finanziari
+                    e il confronto con i principali competitor. La valutazione
+                    ha considerato l’andamento storico delle performance,
+                    i dati di mercato e il posizionamento dell’azienda nel
+                    contesto competitivo e industriale. Il lavoro si è concluso
+                    con una valutazione delle prospettive future, supportata
+                    anche dall’utilizzo di strumenti di AI e da una verifica
+                    critica dei risultati ottenuti.
+                </p>
 
             </article>
 
@@ -410,10 +666,9 @@ Analisi finanziaria di Pirelli attraverso l’applicazione di indicatori economi
                 </p>
 
                 <p>
-                    Descrivi brevemente il tuo ruolo,
-                    le responsabilità principali,
-                    i progetti seguiti e le competenze
-                    sviluppate.
+                    Attività e responsabilità principali, progetti seguiti
+                    e competenze maturate nel corso dell’esperienza
+                    professionale.
                 </p>
 
             </div>
@@ -445,8 +700,11 @@ Analisi finanziaria di Pirelli attraverso l’applicazione di indicatori economi
                 </p>
 
                 <p>
-                    Industrial Management Engineering
-                    Corsi di Interesse: Operations Management, Industrial Technologies, Advanced Modeling for Operations, Advnced Performance Measurement, Digital Twin of Production Systems B, Industrial Management Lab and Toolbox, Manufacturing Systems Engineering II, Operations Risk Management and Resilience, Quality Management
+                    Percorso in Industrial Management Engineering, con focus
+                    su gestione delle operations, tecnologie industriali,
+                    modellazione dei sistemi produttivi, performance
+                    measurement, digital twin, sistemi manifatturieri,
+                    gestione del rischio operativo, resilienza e qualità.
                 </p>
 
             </div>
@@ -456,7 +714,7 @@ Analisi finanziaria di Pirelli attraverso l’applicazione di indicatori economi
             <div class="experience">
 
                 <h3>
-                    Laurea Triennale
+                    Laurea Triennale in Ingegneria Gestionale
                 </h3>
 
                 <p class="experience-meta">
